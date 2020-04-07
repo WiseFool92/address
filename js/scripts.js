@@ -100,9 +100,9 @@ function showContact(contactId) {
   var email = $("#email-button")
   var address = $("#address-button")
   email.empty();
-  email.append(`<button class= "btn btn-success" id="${contact.id}email">Add Email</button>`)
+  email.append(`<button class= "btn btn-success addEmail" id="${contact.id}email">Add Email</button>`)
   address.empty();
-  address.append(`<button class= "btn btn-success" id="${contact.id}address">Add Address</button>`)
+  address.append(`<button class= "btn btn-success addAddress" id="${contact.id}address">Add Address</button>`)
 }
 
 function attachContactListeners() {
@@ -114,10 +114,12 @@ function attachContactListeners() {
     $("#show-contact").hide();
     displayContactDetails(addressBook);
   });
-  $("#add-email").on("click", ".addbutton", function() {
-    addressBook.addEmail(this.id);
-    $(+"#show-contact").hide();
-    displayContactDetails(addressBook);
+  $("#email-button").on("click", ".addEmail", function() {
+    $("#email-button").append(`<input type="email" id="${this.id}-email"><button class="btn btn-success" value="${this.id}">add</button>`)
+  })
+  $("#address-button").on("click", ".addAddress", function() {
+    $("#address-button").append(`<input type="address" id="${this.id}-address"><button class="btn btn-success" value="${this.id}">add</button>`)
+    
   })
 };
 
