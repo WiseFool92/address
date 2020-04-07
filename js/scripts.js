@@ -97,6 +97,12 @@ function showContact(contactId) {
   var buttons = $("#buttons");
   buttons.empty();
   buttons.append("<button class='btn btn-danger deleteButton' id=" + + contact.id + ">Delete</button>");
+  var email = $("#email-button")
+  var address = $("#address-button")
+  email.empty();
+  email.append(`<button class= "btn btn-success" id="${contact.id}email">Add Email</button>`)
+  address.empty();
+  address.append(`<button class= "btn btn-success" id="${contact.id}address">Add Address</button>`)
 }
 
 function attachContactListeners() {
