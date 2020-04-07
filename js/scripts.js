@@ -122,7 +122,7 @@ function attachContactListeners() {
 
   $("#email-button").on("click", ".addEmail", function() {
     $("#email-button").hide()
-    $("#input-email").append(`<input type="email" id="email"><button id="add-email" class="btn btn-success" value="${this.id}">add</button>`)
+    $("#input-email").html(`<input type="email" id="email"><button id="add-email" class="btn btn-success">add</button>`)
   })
 
   $("#input-email").on("click", "#add-email", function(){
@@ -131,11 +131,15 @@ function attachContactListeners() {
     let contact = addressBook.findContact(id)
     contact.emailAddresses.push(newEmail);
     showContact(id)
+    $("#email-button").show();
+    $("#input-email input").hide();
+    $("#input-email button").hide();
+    // $("#input-email").replaceWith(`<div id="input-email"></div>`);
   })
 
   $("#address-button").on("click", ".addAddress", function() {
     $("#address-button").hide()
-    $("#input-address").append(`<input type="address" id="address"><button id="add-address" class="btn btn-success" value="${this.id}">add</button>`)
+    $("#input-address").append(`<input type="address" id="address"><button id="add-address" class="btn btn-success">add</button>`)
   })
   
   $("#input-address").on("click", "#add-address", function(){
@@ -144,6 +148,9 @@ function attachContactListeners() {
     let contact = addressBook.findContact(id)
     contact.physicalAddresses.push(newAddress)
     showContact(id)
+    $("#address-button").show();
+    $("#input-address input").hide();
+    $("#input-address button").hide();
   })
 };
 
