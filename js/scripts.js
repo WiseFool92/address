@@ -115,10 +115,12 @@ function attachContactListeners() {
     displayContactDetails(addressBook);
   });
   $("#email-button").on("click", ".addEmail", function() {
-    $("#email-button").append(`<input type="email" id="${this.id}-email"><button class="btn btn-success" value="${this.id}">add</button>`)
+    $("#email-button").hide()
+    $("#input-email").append(`<input type="email" id="${this.id}-email"><button class="btn btn-success" value="${this.id}">add</button>`)
   })
   $("#address-button").on("click", ".addAddress", function() {
-    $("#address-button").append(`<input type="address" id="${this.id}-address"><button class="btn btn-success" value="${this.id}">add</button>`)
+    $("#address-button").hide()
+    $("#input-address").append(`<input type="address" id="${this.id}-address"><button class="btn btn-success" value="${this.id}">add</button>`)
     
   })
 };
