@@ -91,10 +91,12 @@ function showContact(contactId) {
   contact.emailAddresses.forEach(element => {
     emailString +=` ${element}`;
   });
+
   $(".email-address").html(emailString)
   contact.physicalAddresses.forEach(element => {
     addressString +=` ${element}`;
   })
+
   $(".physical-address").html(addressString)
   var buttons = $("#buttons");
   buttons.empty();
@@ -111,28 +113,31 @@ function attachContactListeners() {
   $("ul#contacts").on("click", "li", function() {
     showContact(this.id);
   });
+
   $("#buttons").on("click", ".deleteButton", function() {
     addressBook.deleteContact(this.id);
     $("#show-contact").hide();
     displayContactDetails(addressBook);
   });
+
   $("#email-button").on("click", ".addEmail", function() {
     $("#email-button").hide()
     $("#input-email").append(`<input type="email" id="email"><button id="add-email" class="btn btn-success" value="${this.id}">add</button>`)
   })
+
   $("#input-email").on("click", "#add-email", function(){
     let newEmail = $("#email").val();
     let id = $("#contactId").val()
     let contact = addressBook.findContact(id)
     contact.emailAddresses.push(newEmail);
     showContact(id)
-    console.log(`click email ${newEmail} id: ${id}`);
-    
   })
+
   $("#address-button").on("click", ".addAddress", function() {
     $("#address-button").hide()
     $("#input-address").append(`<input type="address" id="address"><button id="add-address" class="btn btn-success" value="${this.id}">add</button>`)
   })
+  
   $("#input-address").on("click", "#add-address", function(){
     let newAddress = $("#address").val();
     let id = $("#contactId").val();
@@ -153,8 +158,6 @@ $(document).ready(function() {
       var inputtedPhysicalAddress = $("input#physical-address").val();
       var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmailAddress, inputtedPhysicalAddress);
       addressBook.addContact(newContact);
-      console.log("Address book: ", addressBook);
-      console.log("New contact: ", newContact);
       displayContactDetails(addressBook);
     })
 })
