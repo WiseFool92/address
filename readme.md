@@ -1,6 +1,6 @@
 # _Address Book_
 
-#### April 6th, 2020
+#### April 7th, 2020
 
 ## Description
 
@@ -48,26 +48,22 @@ git clone {link to repository}
 | The program returns a range of numbers from 0 to the user's input in an array | '4' | '0, 1, 2, 3, 4'  |
 | The program replaces one with "Beep" | '1' | 'Beep' |
 | The program replaces two with "Boop" | '2' | 'Boop' |
-| The program replaces three with "Won't you be my neighbor?" | '3' | 'Won't you be my neighbor?' |
-| Exceptions to the rules | ' ' | ' ' |
-| The program replaces any number containing one with "Beep" | '1' , '13' | 'Beep' , 'Beep' |  
-| The program replaces any number containing two with "Boop" | '2' , '21' | 'Boop' , 'Boop' |
-| The program replaces any number containing three with "Won't you be my neighbor?" | '3' , '32' | 'Won't you be my neighbor?' , 'Won't you be my neighbor?' |
+
 
 
 ---
 ## Known Bugs
 
-_N/A_ - 4/6/2020
+_N/A_ - 4/7/2020
 
 ## gh-pages
  
-https://mlstroud.github.io/address-book-2
+https://WiseFool92.github.io/address
 
 ## Support
 
 _Email: watkins92@gmail.com_  
-_Email: lixingke06@gmail.com_
+_Email: jhell@gmail.com_
 
 ---
 ## Built With
@@ -110,4 +106,4 @@ _Email: lixingke06@gmail.com_
 
 This project is licensed under the MIT License
 
-Copyright (c) 2020 **_Nathan Watkins-Hoagland & Matt Stroud_**
+Copyright (c) 2020 **_Nathan Watkins-Hoagland & Josh Hellman_**
