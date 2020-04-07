@@ -23,42 +23,50 @@
       <form id = "new-contact">
         <div class="row">
           <div class="col-6">
-        <label for="new-first-name">First Name</label>
-        <input type="text" id="new-first-name">
-        <label for="new-last-name">Last Name</label>
-        <input type="text" id="new-last-name">
-        <label for="new-phone-number">Phone Number</label>
-        <input type="text" id="new-phone-number">
-      </div>
-      <div class="col-3">
-        <label for="email-address">Email Address</label>
-        <input type="text" id="email-address">
-      </div>
-      <div class="col-3">
-        <label for="physical-address">Physical Address</label>
-        <input type="text" id="physical-address">
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Add</button>
+            <div class="col">
+              <label for="new-first-name">First Name</label>
+              <input type="text" id="new-first-name">
+            </div>
+            <div class="col">
+              <label for="new-last-name">Last Name</label>
+              <input type="text" id="new-last-name">
+            </div>
+            <div class="col">
+              <label for="new-phone-number">Phone Number</label>
+             <input type="text" id="new-phone-number">
+           </div>
+          </div>
+          <div class="col-6">
+            <div class="col">
+              <label for="email-address">Email Address</label>
+              <input type="text" id="email-address">
+            </div>
+            <div class="col">
+              <label for="physical-address">Physical Address</label>
+              <input type="text" id="physical-address">
+            </div>
+          </div>
+        </div>
+            <button type="submit" class="btn btn-primary">Add</button>
       </form>
     </div>
-    <h2 class="text-center">Contacts:</h2>
-    <ul id="contacts">
+      <h2 class="text-center">Contacts:</h2>
+      <ul id="contacts">
 
-    </ul>
+      </ul>
 
     <div id="show-contact">
       <p>First Name: <span class="first-name"></span></p>
       <p>Last Name: <span class="last-name"></span></p>
       <p>Phone Number: <span class="phone-number"></span></p>
       <p>Email Address: <span class="email-address"></span></p>
-      <div id="email-button"></div><div id="input-email"></div>
+    <div id="email-button"></div><div id="input-email"></div>
       <!-- <button class= "btn btn-success" id="add-email">Add Email</button> -->
       <p>Physical Address: <span class="physical-address"></span></p>
-      <div id="address-button"></div><div id="input-address"></div>
+    <div id="address-button"></div><div id="input-address"></div>
       <!-- <button class= "btn btn-success" id="add-address">Add Address</button> -->
 
-      <div id="buttons"></div>
+    <div id="buttons"></div>
     </div>
   </body>
 </html>
