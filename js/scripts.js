@@ -96,7 +96,7 @@ function showContact(contactId) {
   $(".physical-address").html(addressString)
   var buttons = $("#buttons");
   buttons.empty();
-  buttons.append("<button class='deleteButton' id=" + + contact.id + ">Delete</button>");
+  buttons.append("<button class='btn btn-danger deleteButton' id=" + + contact.id + ">Delete</button>");
 }
 
 function attachContactListeners() {
@@ -108,8 +108,10 @@ function attachContactListeners() {
     $("#show-contact").hide();
     displayContactDetails(addressBook);
   });
-  $("#buttons1").on("click", ".addbutton", function() {
-    
+  $("#add-email").on("click", ".addbutton", function() {
+    addressBook.addEmail(this.id);
+    $(+"#show-contact").hide();
+    displayContactDetails(addressBook);
   })
 };
 
