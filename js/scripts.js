@@ -134,7 +134,6 @@ function attachContactListeners() {
     $("#email-button").show();
     $("#input-email input").hide();
     $("#input-email button").hide();
-    // $("#input-email").replaceWith(`<div id="input-email"></div>`);
   })
 
   $("#address-button").on("click", ".addAddress", function() {
