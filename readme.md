@@ -45,9 +45,12 @@ git clone {link to repository}
 #### Address Book
 |                          Behavior                          | Input  | Output  |
 | :--------------------------------------------------------: | :----: | :-----: |
-| The program returns a range of numbers from 0 to the user's input in an array | '4' | '0, 1, 2, 3, 4'  |
-| The program replaces one with "Beep" | '1' | 'Beep' |
-| The program replaces two with "Boop" | '2' | 'Boop' |
+| The program accepts the user's input for first name | 'Bob' | 'Bob'  |
+| The program accepts the user's input for last name | 'Gregas' | 'Gregas'  |
+| The program accepts the user's input for phone number | '5415789846' | '5415789846'  |
+| The program accepts the user's input for email address | 'bob' | 'bob@gmail.com'  |
+| The program accepts the user's input for physcial address | '148 elm way, hilford CT 06379' | '148 elm way, hilford CT 06379'  |
+
 
 
 
