@@ -84,6 +84,8 @@ function showContact(contactId) {
   $(".first-name").html(contact.firstName);
   $(".last-name").html(contact.lastName);
   $(".phone-number").html(contact.phoneNumber);
+  
+  $(".phone-number").append(`<input class="hidden" value="${contact.id}" id="contactId">`) // used to store the contact id to grab with our add email/address function
   let emailString = ""
   let addressString = ""
   contact.emailAddresses.forEach(element => {
@@ -96,13 +98,13 @@ function showContact(contactId) {
   $(".physical-address").html(addressString)
   var buttons = $("#buttons");
   buttons.empty();
-  buttons.append("<button class='btn btn-danger deleteButton' id=" + + contact.id + ">Delete</button>");
+  buttons.append("<button class='btn btn-danger deleteButton'id=" + + contact.id + ">Delete</button>");
   var email = $("#email-button")
   var address = $("#address-button")
   email.empty();
-  email.append(`<button class= "btn btn-success addEmail" id="${contact.id}email">Add Email</button>`)
+  email.append(`<button class= "btn btn-success addEmail">Add Email</button>`)
   address.empty();
-  address.append(`<button class= "btn btn-success addAddress" id="${contact.id}address">Add Address</button>`)
+  address.append(`<button class= "btn btn-success addAddress">Add Address</button>`)
 }
 
 function attachContactListeners() {
@@ -116,12 +118,27 @@ function attachContactListeners() {
   });
   $("#email-button").on("click", ".addEmail", function() {
     $("#email-button").hide()
-    $("#input-email").append(`<input type="email" id="${this.id}-email"><button class="btn btn-success" value="${this.id}">add</button>`)
+    $("#input-email").append(`<input type="email" id="email"><button id="add-email" class="btn btn-success" value="${this.id}">add</button>`)
+  })
+  $("#input-email").on("click", "#add-email", function(){
+    let newEmail = $("#email").val();
+    let id = $("#contactId").val()
+    let contact = addressBook.findContact(id)
+    contact.emailAddresses.push(newEmail);
+    showContact(id)
+    console.log(`click email ${newEmail} id: ${id}`);
+    
   })
   $("#address-button").on("click", ".addAddress", function() {
     $("#address-button").hide()
-    $("#input-address").append(`<input type="address" id="${this.id}-address"><button class="btn btn-success" value="${this.id}">add</button>`)
-    
+    $("#input-address").append(`<input type="address" id="address"><button id="add-address" class="btn btn-success" value="${this.id}">add</button>`)
+  })
+  $("#input-address").on("click", "#add-address", function(){
+    let newAddress = $("#address").val();
+    let id = $("#contactId").val();
+    let contact = addressBook.findContact(id)
+    contact.physicalAddresses.push(newAddress)
+    showContact(id)
   })
 };
 
